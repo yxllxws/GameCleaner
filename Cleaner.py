@@ -4,6 +4,8 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
+#THIS WAS TESTED ON WINDOWS 11, 21H2
+
 def netRefresh():
     os.system('ipconfig /flushdns') #this clears your internet cache
     time.sleep(2.5)
@@ -39,14 +41,15 @@ def main(): #main menu
     print("THIS IS USED TO CLEAR CACHE IN GAMES TO SAVE SOME STORAGE ON YOUR PC!")
     time.sleep(2.5)
     os.system("cls")
-    print(Fore.YELLOW + "[⚠️] This is FREE software!")
+    print(Fore.YELLOW + "[⚠️] This is FREE and OPEN SOURCE software!")
     print("What would you like to clean?")
     print("[1] Games")
     print("[2] Game Launchers")
     print("[3] Temp Files")
     print("[4] Help")
     print("[5] Network [Disable's internet for around 3 secs]")
-    print("[6] Exit")
+    print("[6] Check PC Serial's")
+    print("[7] Exit")
     answer = input()
     if (answer == '1'): #game cleaner
         killTask()
@@ -98,10 +101,11 @@ def main(): #main menu
     elif (answer == '4'): #help
         os.system('cls')
         print("Made by Yxllxws!")
-        print("GitHub Profile: https://github.com/yxllxws\n")
+        print("GitHub Profile: https://github.com/yxllxws")
+        print("GitHub Repo: https://github.com/yxllxws/GameCleaner\n")
         print("Press any key to close")
         input()
-    elif (answer == '5'): #help
+    elif (answer == '5'): #network cleaner
         os.system('cls')
         print("YOUR INTERNET WILL DISCONNECT DURING THIS! DO YOU WANT TO CONTINUE?")
         print("[1] = Yes")
@@ -117,7 +121,17 @@ def main(): #main menu
         elif (answerNet == '2'):
             print('Closing. . .')
             time.sleep(2.5)
-    elif (answer == '6'): #closes script
+    elif (answer == '6'): #serial checker
+        os.system('cls')
+        print("Disk Drive")
+        os.system("wmic diskdrive get serialnumber")
+        print("Memory Chip")
+        os.system("wmic memorychip get serialnumber")
+        print("Base Board")
+        os.system("wmic baseboard get serialnumber")
+        print("Press any key to close. . .")
+        input()
+    elif (answer == '7'): #closes script
         os.system('cls')
         print("Closing. . .")
         time.sleep(2.5)
