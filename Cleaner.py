@@ -87,7 +87,7 @@ def main(): #main menu
         print("GitHub Profile: https://github.com/yxllxws\n")
         print("Press any key to close")
         input()
-    elif (answer == 'P'): #closes script
+    elif (answer == '5'): #closes script
         os.system('cls')
         print("Closing. . .")
         time.sleep(2.5)
