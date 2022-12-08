@@ -6,6 +6,6 @@ Main Menu:
 
 Python Requirements:
 
-os
-time
+os, 
+time, 
 colorama
