@@ -4,6 +4,13 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
+def netRefresh():
+    os.system('ipconfig /flushdns') #this clears your internet cache
+    time.sleep(2.5)
+    os.system('ipconfig /release') #this will disable your internet connection!
+    time.sleep(2.5)
+    os.system('ipconfig /renew') #this will reactivate your internet connection!
+
 def killTask(): #kill's all of the game task's so it can remove the cached files!
     os.system('taskkill /f /im epicgameslauncher.exe')
     os.system('taskkill /f /im FortniteClient-Win64-Shipping.exe')
@@ -14,6 +21,7 @@ def killTask(): #kill's all of the game task's so it can remove the cached files
     os.system('taskkill /f /im steam.exe')
     os.system('taskkill /f /im hl2.exe')
     os.system('taskkill /f /im fivem.exe')
+    os.system('taskkill /f /im GTA5.exe')
     os.system('taskkill /f /im origin.exe')
     os.system('cls')
 
@@ -31,13 +39,14 @@ def main(): #main menu
     print("THIS IS USED TO CLEAR CACHE IN GAMES TO SAVE SOME STORAGE ON YOUR PC!")
     time.sleep(2.5)
     os.system("cls")
-    print("What would you like to clean?")
     print(Fore.YELLOW + "[⚠️] This is FREE software!")
+    print("What would you like to clean?")
     print("[1] Games")
     print("[2] Game Launchers")
     print("[3] Temp Files")
     print("[4] Help")
-    print("[5] Exit")
+    print("[5] Network [Disable's internet for around 3 secs]")
+    print("[6] Exit")
     answer = input()
     if (answer == '1'): #game cleaner
         killTask()
@@ -54,9 +63,14 @@ def main(): #main menu
         print("Fortnite")
         os.system('del /f /s "C:\Program Files\Epic Games\Fortnite\FortniteGame\PersistentDownloadDir\CMS\Files\9A71EB4A90946A4A0DCD9B7D82F48C55B49D0880\siphon-1024x512-4cc0ff3407053325e353c4aea55fb30316e6ecf6.jpg"')
         os.system('del /f /s "C:\Program Files\Epic Games\Fortnite\FortniteGame\PersistentDownloadDir\CMS\Files\9A71EB4A90946A4A0DCD9B7D82F48C55B49D0880\Fortnite%2Ffortnite-game%2Ftournaments%2F11BR_Arena_ModeTiles_Squad_ModeTile-1024x512-c543a187ce733be5ee9f6d17bfb74fb1f2e15f4a.jpg"')
-        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\NVIDIA Corporation\\GfeSDK\\FORTNI~1.LOG"')
+        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\NVIDIA Corporation\\GfeSDK\\FORTNI~1.LOG"') #delete's multiple cache files
         os.system('del /f /s "C:\Program Files\Epic Games\Fortnite\FortniteGame\PersistentDownloadDir\CMS\Files\9A71EB4A90946A4A0DCD9B7D82F48C55B49D0880\Fortnite%2Ffortnite-game%2Ftournaments%2F11BR_Arena_ModeTiles_Solo_ModeTile-1024x512-6cee09d7bcf82ce3f32ca7c77ca04948121ce617.jpg"')
         print("Rust")
+        print("Fivem")
+        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\FiveM\\FiveM.app\\data\\cache\\execut~1.bin"') #delete's multiple cache files
+        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\FiveM\\FiveM.app\\data\\cache\\execut~1.bin"') #delete's multiple cache files
+        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\FiveM\\FiveM.app\\data\\cache\\execut~1.bin"') #delete's multiple cache files
+        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\FiveM\\FiveM.app\\data\\cache\\execut~1.bin"') #delete's multiple cache files
         print("Minecraft")
         os.system('del /s /f "C:\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs"')
         print("Watch Dog's 2")
@@ -87,7 +101,23 @@ def main(): #main menu
         print("GitHub Profile: https://github.com/yxllxws\n")
         print("Press any key to close")
         input()
-    elif (answer == '5'): #closes script
+    elif (answer == '5'): #help
+        os.system('cls')
+        print("YOUR INTERNET WILL DISCONNECT DURING THIS! DO YOU WANT TO CONTINUE?")
+        print("[1] = Yes")
+        print("[2] = No")
+        answerNet = input()
+        if (answerNet == '1'):
+            print('Cleaning Network. . .')
+            time.sleep(2.5)
+            netRefresh()
+            time.sleep(1)
+            print('Finished! Press any key to exit. . .')
+            input()
+        elif (answerNet == '2'):
+            print('Closing. . .')
+            time.sleep(2.5)
+    elif (answer == '6'): #closes script
         os.system('cls')
         print("Closing. . .")
         time.sleep(2.5)
