@@ -106,7 +106,7 @@ def main(): #main menu
         print("Minecraft")
         os.system('del /s /f "C:\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs"')
         print("Watch Dog's 2")
-        os.system('del /s /f "C:\\Users\\Oliver\\Documents\\My Games\\Watch_Dogs 2\\EAC.log"')
+        os.system('del /s /f "C:\\Users\\%username%\\Documents\\My Games\\Watch_Dogs 2\\EAC.log"')
         input()
     elif (answer == '2'): #launcher cleaner
         killTask()
