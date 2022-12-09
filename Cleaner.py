@@ -6,6 +6,16 @@ colorama.init(autoreset=True)
 
 #THIS WAS TESTED ON WINDOWS 11, 21H2
 
+def dir(): #directories
+    print("Loading directories. . .")
+    time.sleep(3)
+    os.system("dir/s")
+
+def tree(): #tree
+    print("Loading tree. . .")
+    time.sleep(3)
+    os.system("tree")
+
 def netRefresh():
     os.system('ipconfig /flushdns') #this clears your internet cache
     time.sleep(2.5)
@@ -103,6 +113,12 @@ def main(): #main menu
         print("Made by Yxllxws!")
         print("GitHub Profile: https://github.com/yxllxws")
         print("GitHub Repo: https://github.com/yxllxws/GameCleaner\n")
+
+        print("Functions:")
+        print("dir()")
+        print("tree()")
+        print("netRefresh()")
+        print("killTask()\n")
         print("Press any key to close")
         input()
     elif (answer == '5'): #network cleaner
