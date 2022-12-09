@@ -134,6 +134,7 @@ def main(): #main menu
         print("GitHub Repo: https://github.com/yxllxws/GameCleaner\n")
 
         print("Functions:")
+        print("osCheck()")
         print("dir()")
         print("tree()")
         print("netRefresh()")
