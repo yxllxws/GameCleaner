@@ -6,6 +6,23 @@ colorama.init(autoreset=True)
 
 #THIS WAS TESTED ON WINDOWS 11, 21H2
 
+system = os.name #os name
+
+allowed = 0 #allowed int
+
+def osCheck(): #check's operating system
+    if (system == 'nt'):
+       allowed = 1
+    elif (system == 'java'):
+        allowed = 0
+        print("Sorry this software is only for Windows!")
+        time.sleep(9235)
+    elif (system == 'posix'):
+        allowed = 0
+        print("Sorry this software is only for Windows!")
+        print("As of right now! Support will be coming soon for your OS!")
+        time.sleep(9235)
+
 def dir(): #directories
     print("Loading directories. . .")
     time.sleep(3)
@@ -38,6 +55,8 @@ def killTask(): #kill's all of the game task's so it can remove the cached files
     os.system('cls')
 
 os.system('title Game Cleaner by Yxllxws') #title
+
+osCheck()
 
 def main(): #main menu
     print("""░██████╗░░█████╗░███╗░░░███╗███████╗  ░█████╗░██╗░░░░░███████╗░█████╗░███╗░░██╗███████╗██████╗░
@@ -118,7 +137,7 @@ def main(): #main menu
         print("dir()")
         print("tree()")
         print("netRefresh()")
-        print("killTask()\n")
+        print("killTask()")
         print("Press any key to close")
         input()
     elif (answer == '5'): #network cleaner
@@ -139,6 +158,15 @@ def main(): #main menu
             time.sleep(2.5)
     elif (answer == '6'): #serial checker
         os.system('cls')
+        check = os.name
+        print("Operating System")
+        if (check == 'nt'):
+            print("Windows\n")
+        elif (check == 'java'):
+            print("Java\n")
+        elif (check == 'posix'):
+            print("Linux\n")
+            
         print("Disk Drive")
         os.system("wmic diskdrive get serialnumber")
         print("Memory Chip")
