@@ -13,14 +13,16 @@ allowed = 0 #allowed int
 def osCheck(): #check's operating system
     if (system == 'nt'):
        allowed = 1
+       print('You are running Windows')
     elif (system == 'java'):
         allowed = 0
+        print('You are running Java')
         print("Sorry this software is only for Windows!")
         time.sleep(9235)
     elif (system == 'posix'):
         allowed = 0
+        print('You are running Posix')
         print("Sorry this software is only for Windows!")
-        print("As of right now! Support will be coming soon for your OS!")
         time.sleep(9235)
 
 def dir(): #directories
@@ -78,7 +80,8 @@ def main(): #main menu
     print("[4] Help")
     print("[5] Network [Disable's internet for around 3 secs]")
     print("[6] Check PC Serial's")
-    print("[7] Exit")
+    print("[7] Run a Command")
+    print("[8] Exit")
     answer = input()
     if (answer == '1'): #game cleaner
         killTask()
@@ -100,9 +103,9 @@ def main(): #main menu
         print("Rust")
         print("Fivem")
         os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\FiveM\\FiveM.app\\data\\cache\\execut~1.bin"') #delete's multiple cache files
-        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\FiveM\\FiveM.app\\data\\cache\\execut~1.bin"') #delete's multiple cache files
-        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\FiveM\\FiveM.app\\data\\cache\\execut~1.bin"') #delete's multiple cache files
-        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\FiveM\\FiveM.app\\data\\cache\\execut~1.bin"') #delete's multiple cache files
+        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\FiveM\\FiveM.app\\data\\cache\\execut~2.bin"') #delete's multiple cache files
+        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\FiveM\\FiveM.app\\data\\cache\\execut~3.bin"') #delete's multiple cache files
+        os.system('del /f /s "C:\\Users\\%username%\\AppData\\Local\\FiveM\\FiveM.app\\data\\cache\\execut~4.bin"') #delete's multiple cache files
         print("Minecraft")
         os.system('del /s /f "C:\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs"')
         print("Watch Dog's 2")
@@ -176,7 +179,24 @@ def main(): #main menu
         os.system("wmic baseboard get serialnumber")
         print("Press any key to close. . .")
         input()
-    elif (answer == '7'): #closes script
+    elif (answer == '7'): #command line
+        os.system('cls')
+        print('Enter Command into the command line')
+        command = input('|')
+        if (command == 'osCheck'):
+            osCheck()
+        elif (command == 'dir'):
+            dir()
+        elif (command == 'tree'):
+            tree()
+        elif (command == 'netRefresh'):
+            netRefresh()
+        elif (command == 'exit'):
+            os.system('cls')
+            print('Closing. . .')
+            time.sleep(1)
+        
+    elif (answer == '8'): #closes script
         os.system('cls')
         print("Closing. . .")
         time.sleep(2.5)
