@@ -110,6 +110,8 @@ def main(): #main menu
         os.system('del /s /f "C:\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs"')
         print("Watch Dog's 2")
         os.system('del /s /f "C:\\Users\\%username%\\Documents\\My Games\\Watch_Dogs 2\\EAC.log"')
+        print("Tomb Raider")
+        os.system('del /s /f "C:\\Users\\%username%\\Documents\\Tomb Raider"')
         input()
     elif (answer == '2'): #launcher cleaner
         killTask()
@@ -145,6 +147,7 @@ def main(): #main menu
         print("Press any key to close")
         input()
     elif (answer == '5'): #network cleaner
+        killTask()
         os.system('cls')
         print("YOUR INTERNET WILL DISCONNECT DURING THIS! DO YOU WANT TO CONTINUE?")
         print("[1] = Yes")
@@ -182,9 +185,30 @@ def main(): #main menu
     elif (answer == '7'): #command line
         os.system('cls')
         print('Enter Command into the command line')
+        print('If you dont know any commands type into the command line "help"')
         command = input('|')
         if (command == 'osCheck'):
             osCheck()
+        elif (command == 'help'):
+            os.system('cls')
+            print('osCheck --Checks what OS you are on')
+            print('dir --Shows all directories on your pc')
+            print('tree --Shows a tree of all directories on your pc')
+            print('netRefresh --Refreshs the Network on your PC (ONLY USE IF YOU KNOW WHAT YOUR DOING)')
+            print('exit --Exits the program')
+            command2 = input('|')
+            if (command2 == 'osCheck'):
+                osCheck()
+            elif (command2 == 'dir'):
+                dir()
+            elif (command2 == 'tree'):
+                tree()
+            elif (command2 == 'netRefresh'):
+                netRefresh()
+            elif (command2 == 'exit'):
+                os.system('cls')
+                print('Closing. . .')
+                time.sleep(1)
         elif (command == 'dir'):
             dir()
         elif (command == 'tree'):
